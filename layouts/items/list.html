@@ -1,0 +1,21 @@
+{{ partial "header.html" . }}
+{{ $start := add (sub (mul .Paginator.PageSize .Paginator.PageNumber) .Paginator.PageSize) 1 }}
+<ol start={{ $start }}>
+{{ range .Paginator.Pages }}
+{{ $site := urls.Parse .Params.ItemUrl }}
+<li class="item">
+    <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a href="/sites/{{ replace $site.Host "www." "" }}">{{ replace $site.Host "www." "" }}</a>)</span></p>
+    <p class="item__meta">
+        <span>{{ .PublishDate }}</span>
+        {{ range .Params.tags }}
+            <a class="item__tag" href="/tags/{{- replace . " " "-" -}}">{{- . -}}</a>
+        {{- end }}
+        <a class="item__notes" href="{{ .Permalink }}">notes</a>
+    </p>
+</li>
+{{ end }}
+</ol>
+
+{{ template "_internal/pagination.html" . }}
+
+{{ partial "footer.html" . }}

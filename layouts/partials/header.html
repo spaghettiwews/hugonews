@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">  -->
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <title>{{ .Site.Title }}</title>
+</head>
+<body>
+<header id="header">
+    <h1><a href="/">{{ .Site.Title }}</a></h1>
+    <nav>
+        <ul>
+            <li><a href="/tags">tags</a></li>
+            <li><a href="/sites">sites</a></li>
+            <li><a href="https://github.com/spaghettiwews/hugonews">github</a></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">

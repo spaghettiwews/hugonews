@@ -1,0 +1,9 @@
+{{ partial "header.html" . }}
+<ol>
+    {{ range $key, $value := .Data.Terms.ByCount }}
+    <li class="item">
+        <p class="item__urls"><a href="{{ $value.Name | urlize }}">{{ $value.Name }}</a><span class="item__count">({{ $value.Count }})</span></p>
+    </li>
+    {{ end }}
+</ol>
+{{ partial "footer.html" . }}
