@@ -1,4 +1,5 @@
-# hugonews - a hugo theme for a personal bookmarking website
+# hugonews 
+*a hugo theme for a personal bookmarking website*
 
 **hugonews** is a [Hugo](https://gohugo.io) theme that I primarily use for my absurd bookmarking website - https://bookmarks.wews.co. Its aesthetic was inspired by that of [Hacker News](https://news.ycombinator.com)
 
