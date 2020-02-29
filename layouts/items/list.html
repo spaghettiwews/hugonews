@@ -6,7 +6,7 @@
 <li class="item">
     <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a href="/sites/{{ replace $site.Host "www." "" }}">{{ replace $site.Host "www." "" }}</a>)</span></p>
     <p class="item__meta">
-        <span>{{ .PublishDate }}</span>
+        {{ partial "age.html" . }}
         {{ range .Params.tags }}
             <a class="item__tag" href="/tags/{{- replace . " " "-" -}}">{{- . -}}</a>
         {{- end }}
