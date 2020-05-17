@@ -91,6 +91,10 @@ nav a {
     margin-right: .5rem;
 }
 
+.item__section {
+    color: #000000;
+}
+
 .item__count {
     margin: 0 0 0 0.5rem;
 }
@@ -120,12 +124,6 @@ ul.pagination li.active a {
 
 .single {
     padding: 1rem;
-}
-
-.single code {
-    background: #fdbcfb;
-    font-size: 1rem;
-    padding: 0 0.5rem;
 }
 
 @media (max-width: 960px) {
