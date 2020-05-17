@@ -23,7 +23,7 @@
 
 3. Add the hugonews theme as a submodule to your website repo
     ```bash
-    git submodule add https://github.com/spaghettiwews/hugonews.git themes/hugonews
+    git submodule add https://github.com/murarisumit/hugonews.git themes/hugonews
     ```
 
 4. Set your site theme to hugonews by editing `config.toml` and adding the following line **`theme = "hugonews"`**
@@ -36,10 +36,12 @@
 
 5. Now, from the root of your website, create a bookmark item using the `hugo` CLI
     ```bash
-    hugo new items/dark-mode-website-css.md
+    hugo new til/dark-mode-website-css.md
+    hugo new bookmark/dark-mode-website-css.md
+    hugo new snippet/dark-mode-website-css.md
     ```
 
-6. Edit the newly created file to add the necessary metadata. The file will be in your content directory in `/content/items/`
+6. Edit the newly created file to add the necessary metadata. The file will be in your content directory in `/content/til/`
     ```markdown
     ---
     title: "Dark mode in a website with CSS"
