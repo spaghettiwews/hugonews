@@ -9,15 +9,15 @@
     <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a href='/sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
     {{ else }}
     <!-- for tils -->
-    <p class="item__urls"><a href="{{ .Permalink }}">{{ .Title }}</a> </p>
+    <p class="item__urls"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </p>
     {{ end }}
     <p class="item__meta">
         {{ partial "age.html" . }}
         {{ range .Params.tags }}
-            <a class="item__tag" href="/tags/{{- replace . " " "-" -}}">{{- . -}}</a>
+            <a class="item__tag" href="tags/{{- replace . " " "-" -}}">{{- . -}}</a>
         {{- end }}
-        {{ if eq .Section "bookmarks" }}
-        <a class="item__notes" href="{{ .Permalink }}">notes</a>
+        {{ if eq .Section "bookmark" }}
+        <a class="item__notes" href="{{ .RelPermalink }}">notes</a>
         {{ end }}
         <a class="item__section" href="{{ .Section }}"> {{ .Section }}</a>
     </p>

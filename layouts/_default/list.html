@@ -15,12 +15,11 @@
         <p class="item__meta">
             {{ partial "age.html" . }}
             {{ range .Params.tags }}
-                <a class="item__tag" href="/tags/{{- replace . " " "-" -}}">{{- . -}}</a>
+            <a class="item__tag" href="{{ "tags" | relURL }}/{{- replace . " " "-" -}}">{{- . -}}</a>
             {{- end }}
             {{ if eq .Section "bookmarks" }}
             <a class="item__notes" href="{{ .Permalink }}">notes</a>
             {{ end }}
-            <a class="item__section" href="{{ .Section }}"> {{ .Section }}</a>
         </p>
     </li>
     {{ end }}
