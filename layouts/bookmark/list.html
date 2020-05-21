@@ -12,7 +12,10 @@
             {{ range .Params.tags }}
             <a class="item__tag" href="{{ "tags" | relURL }}/{{- replace . " " "-" -}}">{{- . -}}</a>
             {{- end }}
+
+            {{ if ne (trim .Content " ") "" }}
             <a class="item__notes" href="{{ .Permalink }}">notes</a>
+            {{ end }} 
         </p>
     </li>
     {{ end }}

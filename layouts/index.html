@@ -17,7 +17,9 @@
             <a class="item__tag" href="tags/{{- replace . " " "-" -}}">{{- . -}}</a>
         {{- end }}
         {{ if eq .Section "bookmark" }}
+        {{ if ne (trim .Content " ") "" }}
         <a class="item__notes" href="{{ .RelPermalink }}">notes</a>
+        {{ end }}
         {{ end }}
         <a class="item__section" href="{{ .Section }}"> {{ .Section }}</a>
     </p>
