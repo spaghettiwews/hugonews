@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">  -->
 
-    {{ partial "meta" . }}
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}"/>
+    {{ partial "meta" . }}
 
 </head>
 <body>
