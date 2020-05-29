@@ -1,6 +1,9 @@
 # hugonews 
 *a hugo theme for a personal bookmarking website*
 
+__Inspired and taken from https://github.com/spaghettiwews/hugonews__
+
+
 **hugonews** is a [Hugo](https://gohugo.io) theme that I primarily use for my absurd bookmarking website - https://bookmarks.wews.co. Its aesthetic was inspired by that of [Hacker News](https://news.ycombinator.com)
 
 ## Getting Started
