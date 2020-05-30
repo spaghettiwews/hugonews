@@ -12,12 +12,10 @@ function get_post_age(postdate) {
     }
     else if (age_days < 30) {
         age_string = age_days + ' days ago';
-        console.log(age_days + ' days ago');
     }
     else {
         let age_months = Math.round(difference_ms/one_month);
         age_string = age_months + ' months ago';
-        console.log(age_months + ' months ago')
     }
     return age_string;
 }
@@ -27,7 +25,6 @@ function update_post_age() {
     for (var item of items) {
       let postdate = Date.parse(item.getAttribute('pdate'));
       item.innerHTML = get_post_age(postdate);
-      console.log(get_post_age(postdate));
     }
 }
 
