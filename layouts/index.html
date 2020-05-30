@@ -12,7 +12,9 @@
     <p class="item__urls"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </p>
     {{ end }}
     <p class="item__meta">
-        {{ partial "age.html" . }}
+        <span class="post_age" pdate="{{ .Lastmod.Format "January 2, 2006"  }}"> </span>
+        <!-- works but month daate inverted <span class="post_age" pdate="{{ .Date.Format "2006&#45;03&#45;01" }}"> </span> -->
+        <!-- {{ partial "age.html" . }} -->
         {{ range .Params.tags }}
             <a class="item__tag" href="tags/{{- replace . " " "-" -}}">{{- . -}}</a>
         {{- end }}

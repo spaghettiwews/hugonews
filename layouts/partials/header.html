@@ -8,10 +8,10 @@
 
     <title>{{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}"/>
+    <script src="{{ "js/utils/age.js" | relURL }}"> </script>
     {{ partial "meta" . }}
-
 </head>
-<body>
+<body onload="update_post_age()">
 <header id="header">
   <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
     <nav>
