@@ -7,7 +7,7 @@ function get_post_age(postdate) {
 	let difference_ms = today - postdate;
     let age_days = Math.round(difference_ms/one_day);
 
-    if (age_days == 1 ) {
+    if (age_days <= 0 ) {
         age_string = "Posted today"
     }
     else if (age_days < 30) {
