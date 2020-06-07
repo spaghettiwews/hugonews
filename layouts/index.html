@@ -1,32 +1,33 @@
 {{ partial "header.html" . }}
 {{ $start := add (sub (mul .Paginator.PageSize .Paginator.PageNumber) .Paginator.PageSize) 1 }}
 <ol start={{ $start }}>
-{{ range .Paginator.Pages }}
-{{ $site := urls.Parse .Params.ItemUrl }}
-<li class="item">
-    {{ if eq .Section "bookmark" }}
+    {{ range .Paginator.Pages }}
     {{ $site := urls.Parse .Params.ItemUrl }}
-    <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a href='/sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
-    {{ else }}
-    <!-- for tils -->
-    <p class="item__urls"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </p>
-    {{ end }}
-    <p class="item__meta">
-        <span class="post_age" pdate="{{ .Lastmod.Format "January 2, 2006"  }}"> </span>
-        <!-- works but month daate inverted <span class="post_age" pdate="{{ .Date.Format "2006&#45;03&#45;01" }}"> </span> -->
-        <!-- {{ partial "age.html" . }} -->
-        {{ range .Params.tags }}
+    <li class="item">
+        {{ if eq .Section "bookmarks" }}
+        {{ $site := urls.Parse .Params.ItemUrl }}
+        <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a
+                    href='/sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
+        {{ else }}
+        <!-- for tils -->
+        <p class="item__urls"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </p>
+        {{ end }}
+        <p class="item__meta">
+            <span class="post_age" pdate="{{ .Lastmod.Format "January 2, 2006"  }}"> </span>
+            <!-- works but month daate inverted <span class="post_age" pdate="{{ .Date.Format "2006&#45;03&#45;01" }}"> </span> -->
+            <!-- {{ partial "age.html" . }} -->
+            {{ range .Params.tags }}
             <a class="item__tag" href="tags/{{- replace . " " "-" -}}">{{- . -}}</a>
-        {{- end }}
-        {{ if eq .Section "bookmark" }}
-        {{ if ne (trim .Content " ") "" }}
-        <a class="item__notes" href="{{ .RelPermalink }}">notes</a>
-        {{ end }}
-        {{ end }}
-        <a class="item__section" href="{{ .Section }}"> {{ .Section }}</a>
-    </p>
-</li>
-{{ end }}
+            {{- end }}
+            {{ if eq .Section "bookmarks" }}
+            {{ if ne (trim .Content " ") "" }}
+            <a class="item__notes" href="{{ .RelPermalink }}">notes</a>
+            {{ end }}
+            {{ end }}
+            <a class="item__section" href="{{ .Section }}"> {{ .Section }}</a>
+        </p>
+    </li>
+    {{ end }}
 </ol>
 {{ template "_internal/pagination.html" . }}
 {{ partial "footer.html" . }}
