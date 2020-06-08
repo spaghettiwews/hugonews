@@ -6,9 +6,9 @@
 
     <li class="item">
         {{ $site := urls.Parse .Params.ItemUrl }}
-        <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a href='/sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
+        <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a
+                    href='/sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
         <p class="item__meta">
-            <!-- {{ partial "age.html" . }} -->
             <span class="post_age" pdate="{{ .Lastmod.Format "January 2, 2006"  }}"> </span>
             {{ range .Params.tags }}
             <a class="item__tag" href="{{ "tags" | relURL }}/{{- replace . " " "-" -}}">{{- . -}}</a>
@@ -16,10 +16,10 @@
 
             {{ if ne (trim .Content " ") "" }}
             <a class="item__notes" href="{{ .Permalink }}">notes</a>
-            {{ end }} 
+            {{ end }}
         </p>
     </li>
     {{ end }}
-    </ol>
-    {{ template "_internal/pagination.html" . }}
+</ol>
+{{ template "_internal/pagination.html" . }}
 {{ partial "footer.html" . }}
