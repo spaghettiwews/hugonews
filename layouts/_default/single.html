@@ -4,7 +4,7 @@
     {{ if ne (trim .Content " ") "" }}
     {{ .Content }}
     {{ else }}
-    <p>You have not written any notes for this article.</p>
+    <p>No written notes for this article.</p>
     {{ end }}
 </article>
 {{ partial "footer.html" . }}
