@@ -8,7 +8,7 @@
         {{ if eq .Section "bookmarks" }}
         {{ $site := urls.Parse .Params.ItemUrl }}
         <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a
-                    href='/sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
+                    href='sites/{{ replace $site.Host "www." "" }}'>{{ replace $site.Host "www." "" }}</a>)</span></p>
         {{ else }}
         <p class="item__urls"><a href="{{ .RelPermalink }}">{{ .Title }}</a> </p>
         {{ end }}
