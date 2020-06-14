@@ -4,6 +4,9 @@
     <h2>
         <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> </p>
     </h2>
+    {{ range $key, $value := .Params.tags }}
+    <button disabled="disabled"> {{ $value }}</button>
+    {{ end }}
     {{ if ne (trim .Content " ") "" }}
     {{ .Content }}
     {{ else }}

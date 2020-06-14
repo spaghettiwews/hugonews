@@ -1,6 +1,10 @@
 {{ partial "header.html" . }}
 <article class="single">
     <h2> {{ .Title }} </h2>
+    <strong>Tags: </strong>
+    {{ range $key, $value := .Params.tags }}
+    <button disabled="disabled"> {{ $value }}</button>
+    {{ end }}
     {{ if ne (trim .Content " ") "" }}
     {{ .Content }}
     {{ else }}
