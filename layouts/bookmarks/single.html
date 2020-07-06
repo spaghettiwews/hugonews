@@ -2,7 +2,8 @@
 <article class="single">
     {{ $site := urls.Parse .Params.ItemUrl }}
     <h2>
-        <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> </p>
+        <p class="item__urls"><a href="{{ .Params.ItemUrl }}">{{ .Title }}</a> <span class="item__siteurl">(<a
+            href='#'>{{ replace $site.Host "www." "" }}</a>)</span> </p>
     </h2>
     {{ range $key, $value := .Params.tags }}
     <button disabled="disabled"> {{ $value }}</button>
